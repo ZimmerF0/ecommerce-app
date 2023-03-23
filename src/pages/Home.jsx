@@ -18,6 +18,8 @@ import Clock from "../components/UI/Clock";
 const Home = () => {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestSalesProducts, setBestSalesProducts] = useState([]);
+  const [mobileProducts, setMobileProducts] = useState([]);
+  const [wirelessProducts, setWirelessProducts] = useState([]);
 
   const year = new Date().getFullYear();
 
@@ -28,9 +30,17 @@ const Home = () => {
     const filteredBestSalesProducts = products.filter(
       item => item.category === "sofa"
     );
+    const filteredMobileProducts = products.filter(
+      item => item.category === "mobile"
+    );
+    const filteredWirelessProducts = products.filter(
+      item => item.category === "wireless"
+    );
 
     setTrendingProducts(filteredTrendingProducts);
     setBestSalesProducts(filteredBestSalesProducts);
+    setMobileProducts(filteredMobileProducts);
+    setWirelessProducts(filteredWirelessProducts);
   }, []);
 
   return (
@@ -120,6 +130,8 @@ const Home = () => {
             <Col lg="12" className="text-center">
                 <h2 className="section__title">New Arrivals</h2>
               </Col>
+              <ProductsList data={mobileProducts} />
+              <ProductsList data={wirelessProducts} />
             </Row>
           </Container>
         </section>
