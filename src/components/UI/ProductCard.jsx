@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   return (
-    <Col lg="3" md="4">
+    <Col className="mb-2" lg="3" md="4">
       <div className="product__item">
         <div className="product__img">
           <motion.img whileHover={{ scale: 0.9 }} src={item.imgUrl} alt="" />
