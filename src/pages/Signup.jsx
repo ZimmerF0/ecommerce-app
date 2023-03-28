@@ -37,7 +37,7 @@ const Signup = () => {
 
       const user = userCredential.user;
 
-      const storageRef = ref(storage, `images/${Date.now() + username}`);
+      const storageRef = ref(storage, `images/${ Date.now() + username}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       uploadTask.on(
@@ -49,7 +49,7 @@ const Signup = () => {
             // update user profile
             await updateProfile(user, {
               displayName: username,
-              photoUrl: downloadURL,
+              photoURL: downloadURL,
             });
 
             // store user data in firestore database
@@ -57,7 +57,7 @@ const Signup = () => {
               uid: user.uid,
               displayName: username,
               email,
-              photoUrl: downloadURL,
+              photoURL: downloadURL,
             });
           });
         }
