@@ -48,7 +48,7 @@ const ProductDetails = () => {
     };
 
     console.log(reviewObj);
-    toast.success("Review submitted");
+    toast.success('Review submitted')
   };
 
   const addToCart = () => {
